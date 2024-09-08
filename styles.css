@@ -11,7 +11,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-family: 'Cyber', sans-serif;
-  background: linear-gradient(90deg, #00b8ff 0%, #001eff 100%); /* Reverted to blue gradient */
+  background: linear-gradient(90deg, #00b8ff 0%, #001eff 100%); /* Blue gradient background */
   color: #fff;
   margin: 0;
   padding: 0;
