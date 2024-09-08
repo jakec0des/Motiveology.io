@@ -1,129 +1,125 @@
-@font-face {
-  font-family: Cyber;
-  src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
-  font-display: swap;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-  font-family: 'Cyber', sans-serif;
-  background: linear-gradient(90deg, #00b8ff 30%, #001eff 70%);
-  color: #fff;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(90deg, #00b8ff, #001eff);
+    color: #ffffff;
+    text-align: center;
 }
 
 h1 {
-  color: #f5ed00; /* Yellow */
-  text-shadow: 0 0 10px #f5ed00, 0 0 20px #f5ed00, 0 0 30px #f5ed00, 0 0 40px #d600ff, 0 0 50px #d600ff;
+    color: #ffeb3b; /* Yellow color for title */
+    margin-bottom: 20px;
 }
 
 form {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 18px;
+    margin-right: 10px;
 }
 
 input[type="number"] {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  margin: 10px;
-  width: 80%;
-  max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 button.cybr-btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background: linear-gradient(45deg, #00ff9f, #00b8ff); /* Cyberpunk yellow-green gradient */
-  color: #ff0000; /* Red text */
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 12px rgba(0, 255, 159, 0.8), 0 0 20px rgba(0, 184, 255, 0.6); /* Glow effect */
-  position: relative;
-  font-family: 'Cyber', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #ffeb3b, #ff9800); /* Yellow to blood orange gradient */
+    color: #d600ff; /* Red text color */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 12px rgba(255, 165, 0, 0.8), 0 0 20px rgba(255, 165, 0, 0.6); /* Orange glow effect */
+    position: relative;
 }
 
 button.cybr-btn:hover {
-  background: linear-gradient(45deg, #00b8ff, #00ff9f); /* Inverted gradient on hover */
-  box-shadow: 0 0 15px rgba(0, 255, 159, 1), 0 0 25px rgba(0, 184, 255, 0.8); /* Stronger glow on hover */
+    background: linear-gradient(45deg, #ff9800, #ff5722); /* Darker orange gradient on hover */
+    box-shadow: 0 0 15px rgba(255, 87, 34, 1), 0 0 25px rgba(255, 87, 34, 0.8); /* Stronger orange glow on hover */
 }
 
 button.cybr-btn:after,
 button.cybr-btn:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);
-  z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);
+    z-index: -1;
 }
 
 button.cybr-btn:before {
-  background: rgba(0, 255, 159, 0.6); /* Shadow */
-  transform: translate(4px, 4px);
+    background: rgba(255, 165, 0, 0.6); /* Orange shadow */
+    transform: translate(4px, 4px);
 }
 
 button.cybr-btn:after {
-  background: linear-gradient(45deg, #00ff9f, #00b8ff); /* Gradient */
+    background: linear-gradient(45deg, #ffeb3b, #ff9800); /* Yellow to blood orange gradient */
 }
 
 button.cybr-btn:active {
-  background: linear-gradient(45deg, #00b8ff, #00ff9f); /* Darker gradient on active */
+    background: linear-gradient(45deg, #ff9800, #ff5722); /* Darker orange gradient on active */
 }
 
-/* Table styles */
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
 th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
 }
 
 th {
-  background-color: #00b8ff;
-  color: #fff;
-  font-weight: bold;
+    background-color: #00b8ff; /* Blue color for header */
+    color: #ffffff;
+    font-weight: bold;
 }
 
 tr:nth-child(even) {
-  background-color: #001eff;
+    background-color: #001eff; /* Darker blue for even rows */
 }
 
 tr:hover {
-  background-color: #00b8ff;
-  color: #000;
+    background-color: #00b8ff; /* Light blue for hover effect */
 }
 
-/* Responsive styling */
 @media (max-width: 600px) {
-  body {
-      padding: 20px;
-  }
-
-  input[type="number"], button.cybr-btn {
-      width: 100%;
-      max-width: none;
-  }
+    body {
+        padding: 10px;
+    }
+    
+    button.cybr-btn {
+        width: 100%;
+        font-size: 18px;
+        padding: 15px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 12px;
+    }
 }
