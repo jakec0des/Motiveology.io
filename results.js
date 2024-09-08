@@ -22,14 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
         resultsHtml += `
             <div class="week-container">
                 <h2>Week ${week}: ${pr.toFixed(2)} lbs</h2>
-                <div class="warmup-list">
-                    <p>Warm-up Set 1 (10 Reps): ${warmup1.toFixed(2)} lbs</p>
-                    <p>Warm-up Set 2 (6 Reps): ${warmup2.toFixed(2)} lbs</p>
-                    <p>Warm-up Set 3 (1 Rep): ${warmup3.toFixed(2)} lbs</p>
-                    <p>Warm-up Set 4 (1 Rep): ${warmup4.toFixed(2)} lbs</p>
-                    <p>Warm-up Set 5 (1 Rep): ${warmup5.toFixed(2)} lbs</p>
-                    <p>PR Attempt: ${pr.toFixed(2)} lbs</p>
-                </div>
+                <p>Warm-up Set 1 (10 Reps): ${warmup1.toFixed(2)} lbs</p>
+                <p>Warm-up Set 2 (6 Reps): ${warmup2.toFixed(2)} lbs</p>
+                <p>Warm-up Set 3 (1 Rep): ${warmup3.toFixed(2)} lbs</p>
+                <p>Warm-up Set 4 (1 Rep): ${warmup4.toFixed(2)} lbs</p>
+                <p>Warm-up Set 5 (1 Rep): ${warmup5.toFixed(2)} lbs</p>
+                <p>PR Attempt: ${pr.toFixed(2)} lbs</p>
             </div>
         `;
 
@@ -38,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById('results').innerHTML = resultsHtml;
 });
+
 
 
 
