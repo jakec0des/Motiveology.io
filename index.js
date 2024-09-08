@@ -21,19 +21,17 @@ function calculateWarmups() {
         resultsTable.innerHTML += `
             <tr>
                 <td>Week ${week}</td>
-                <td>${warmup1} lbs</td>
-                <td>${warmup2} lbs</td>
-                <td>${warmup3} lbs</td>
-                <td>${warmup4} lbs</td>
-                <td>${warmup5} lbs</td>
-                <td>${pr} lbs</td>
+                <td>${warmup1} lbs (10 Reps)</td>
+                <td>${warmup2} lbs (6 Reps)</td>
+                <td>${warmup3} lbs (1 Rep)</td>
+                <td>${warmup4} lbs (1 Rep)</td>
+                <td>${warmup5} lbs (1 Rep)</td>
+                <td>${pr} lbs (1 Rep)</td>
             </tr>
         `;
-
-        // Update PR for the next week
-        prMax += 5;
     }
 }
+
 
 
 
