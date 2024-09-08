@@ -11,8 +11,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-family: 'Cyber', sans-serif;
-  background: url('https://jakec0des/Motiveology.io/nezih-kosak-DySFm3MAzRs-unsplash.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(90deg, #00b8ff 70%, #001eff 70%);
   color: #fff;
   margin: 0;
   padding: 0;
@@ -112,5 +111,3 @@ button.submit-btn:active {
 .week p {
   color: #00ff9f; /* Green text for warm-up details */
 }
-
-
