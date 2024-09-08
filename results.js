@@ -1,33 +1,35 @@
-window.onload = function() {
-    // Parse the query string to get the data
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const dataString = urlParams.get('data');
-    if (dataString) {
-        const results = JSON.parse(decodeURIComponent(dataString));
-        displayResults(results);
-    } else {
-        document.getElementById('results').innerHTML = 'No data available.';
+function calculateWarmups() {
+    const prMax = parseFloat(document.getElementById('pr-max').value);
+    const resultsTable = document.getElementById('results-table');
+    
+    if (isNaN(prMax) || prMax <= 0) {
+        alert('Please enter a valid 1 Rep Max.');
+        return;
     }
-};
+    
+    let tableRows = '';
+    
+    for (let week = 1; week <= 8; week++) {
+        const warmup1 = Math.round((prMax / 2) / 5) * 5;
+        const warmup2 = Math.round((prMax * 0.05) / 5) * 5;
+        const warmup3 = Math.round((prMax * 0.93) / 5) * 5;
+        const warmup4 = warmup3 + 10;
+        const warmup5 = warmup4 + 5;
+        const pr = prMax + (week - 1) * 5;
 
-function displayResults(weeks) {
-    const resultsDiv = document.getElementById('results');
-    let html = '<table><thead><tr><th>Week</th><th>10 Reps</th><th>6 Reps</th><th>1 Rep</th><th>1 Rep + 10</th><th>1 Rep + 15</th><th>PR</th></tr></thead><tbody>';
+        tableRows += `
+            <tr>
+                <td>Week ${week}</td>
+                <td>${warmup1} lbs</td>
+                <td>${warmup2} lbs</td>
+                <td>${warmup3} lbs</td>
+                <td>${warmup4} lbs</td>
+                <td>${warmup5} lbs</td>
+                <td>${pr} lbs</td>
+            </tr>
+        `;
+    }
 
-    weeks.forEach(week => {
-        html += `<tr>
-            <td>Week ${week.week}</td>
-            <td>${week.warmup1} lbs</td>
-            <td>${week.warmup2} lbs</td>
-            <td>${week.warmup3} lbs</td>
-            <td>${week.warmup4} lbs</td>
-            <td>${week.warmup5} lbs</td>
-            <td>${week.pr} lbs</td>
-        </tr>`;
-    });
-
-    html += '</tbody></table>';
-    resultsDiv.innerHTML = html;
+    resultsTable.innerHTML = tableRows;
 }
 
