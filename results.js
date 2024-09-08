@@ -1,35 +1,20 @@
-function calculateWarmups() {
-    const prMax = parseFloat(document.getElementById('pr-max').value);
-    const resultsTable = document.getElementById('results-table');
-    
-    if (isNaN(prMax) || prMax <= 0) {
-        alert('Please enter a valid 1 Rep Max.');
-        return;
-    }
-    
-    let tableRows = '';
-    
-    for (let week = 1; week <= 8; week++) {
-        const warmup1 = Math.round((prMax / 2) / 5) * 5;
-        const warmup2 = Math.round((prMax * 0.05) / 5) * 5;
-        const warmup3 = Math.round((prMax * 0.93) / 5) * 5;
-        const warmup4 = warmup3 + 10;
-        const warmup5 = warmup4 + 5;
-        const pr = prMax + (week - 1) * 5;
+document.addEventListener('DOMContentLoaded', () => {
+    const weeks = JSON.parse(localStorage.getItem('weeks'));
+    const tableBody = document.querySelector('#results-table tbody');
 
-        tableRows += `
-            <tr>
-                <td>Week ${week}</td>
-                <td>${warmup1} lbs</td>
-                <td>${warmup2} lbs</td>
-                <td>${warmup3} lbs</td>
-                <td>${warmup4} lbs</td>
-                <td>${warmup5} lbs</td>
-                <td>${pr} lbs</td>
-            </tr>
+    weeks.forEach(week => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${week.week}</td>
+            <td>${week.warmup1} lbs</td>
+            <td>${week.warmup2} lbs</td>
+            <td>${week.warmup3} lbs</td>
+            <td>${week.warmup4} lbs</td>
+            <td>${week.warmup5} lbs</td>
+            <td>${week.pr} lbs</td>
         `;
-    }
+        tableBody.appendChild(row);
+    });
+});
 
-    resultsTable.innerHTML = tableRows;
-}
 

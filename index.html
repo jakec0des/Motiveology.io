@@ -3,31 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motivology PR Calculator Results</title>
+    <title>Motivology PR Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Motivology PR Calculator Results</h1>
-    <table id="results-table">
-        <thead>
-            <tr>
-                <th>Week</th>
-                <th>Warmup 1 (10 Reps)</th>
-                <th>Warmup 2 (6 Reps)</th>
-                <th>Warmup 3 (1 Rep)</th>
-                <th>Warmup 4 (1 Rep)</th>
-                <th>Warmup 5 (1 Rep)</th>
-                <th>PR (1 Rep)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Results will be inserted here by JavaScript -->
-        </tbody>
-    </table>
-    <button class="back-btn" onclick="window.location.href='index.html'">Back</button>
+    <h1>Motivology PR Calculator</h1>
+    <form id="calculator-form">
+        <label for="pr">Enter your PR (1 Rep Max):</label>
+        <input type="number" id="pr" name="pr" required>
+        
+        <label for="warmup-pr">Enter your Warmup PR (10 Reps):</label>
+        <input type="number" id="warmup-pr" name="warmup-pr" required>
+        
+        <button type="submit" class="submit-btn">Calculate Warmups</button>
+    </form>
     <script src="index.js"></script>
 </body>
 </html>
+
 
 
 
