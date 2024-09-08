@@ -106,4 +106,3 @@ button.back-btn:hover {
   background: linear-gradient(45deg, #00ff9f, #d600ff); /* Darker cyberpunk colors on hover */
   box-shadow: 0 0 15px rgba(214, 0, 255, 1), 0 0 25px rgba(214, 0, 255, 0.8); /* Stronger yellow glow on hover */
 }
-
