@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motivology - Warm-ups Results</title>
+    <title>Motivology PR Calculator Results</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Motivology - Warm-up Results</h1>
-        <button class="back-btn" onclick="window.location.href='index.html'">Back to Calculator</button>
-        <div id="results"></div>
-    </div>
-    <script src="results.js"></script>
+    <h1>Motivology PR Calculator Results</h1>
+    <table id="results-table">
+        <thead>
+            <tr>
+                <th>Week</th>
+                <th>Warmup 1 (10 Reps)</th>
+                <th>Warmup 2 (6 Reps)</th>
+                <th>Warmup 3 (1 Rep)</th>
+                <th>Warmup 4 (1 Rep)</th>
+                <th>Warmup 5 (1 Rep)</th>
+                <th>PR (1 Rep)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Results will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+    <button class="back-btn" onclick="window.location.href='index.html'">Back</button>
+    <script src="index.js"></script>
 </body>
 </html>
+

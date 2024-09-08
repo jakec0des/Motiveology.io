@@ -6,9 +6,10 @@ function calculateWarmups() {
     }
 
     const resultsTable = document.getElementById('results-table');
-    resultsTable.innerHTML = '';
+    resultsTable.innerHTML = ''; // Clear previous results
 
     for (let week = 1; week <= 8; week++) {
+        // Calculate warmup values
         const warmup1 = Math.round(prMax / 2 / 5) * 5;
         const warmup2 = Math.round(prMax * 0.05 / 5) * 5;
         const warmup3 = Math.round(prMax * 0.93 / 5) * 5;
@@ -16,6 +17,7 @@ function calculateWarmups() {
         const warmup5 = warmup4 + 5;
         const pr = prMax + (week - 1) * 5;
 
+        // Add a row to the results table for the current week
         resultsTable.innerHTML += `
             <tr>
                 <td>Week ${week}</td>
@@ -28,10 +30,11 @@ function calculateWarmups() {
             </tr>
         `;
 
-        // Increase PR by 5 lbs for the next week
+        // Update PR for the next week
         prMax += 5;
     }
 }
+
 
 
 
