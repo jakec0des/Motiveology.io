@@ -11,11 +11,13 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-family: 'Cyber', sans-serif;
-  background: linear-gradient(90deg, #00b8ff 70%, #001eff 70%);
+  background: url('https://jakec0des/Motiveology.io/photoback.avif') no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
   margin: 0;
   padding: 0;
 }
+
 
 h1 {
   color: #ffff00; /* Yellow text */
