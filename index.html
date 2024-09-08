@@ -5,38 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Motivology PR Calculator</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="index.js"></script>
 </head>
 <body>
     <h1>Motivology PR Calculator</h1>
-
-    <form id="pr-form">
-        <label for="pr-max">Enter your PR (1 rep max):</label>
+    <form id="calculator-form">
+        <label for="pr-max">Enter your 1 Rep Max (PR):</label>
         <input type="number" id="pr-max" name="pr-max" required>
         
-        <button type="button" class="cybr-btn" id="calculate-btn">Calculate Warmups</button>
+        <button type="button" class="cybr-btn" onclick="calculateWarmups()">Calculate Warmups</button>
     </form>
-
-    <div id="results" style="display: none;">
-        <h2>Warm-Up Recommendations</h2>
-        <table id="results-table">
+    
+    <div id="results">
+        <h2>Warmup Sets</h2>
+        <table>
             <thead>
                 <tr>
                     <th>Week</th>
                     <th>10 Reps</th>
                     <th>6 Reps</th>
-                    <th>1 Rep 1</th>
-                    <th>1 Rep 2</th>
-                    <th>1 Rep 3</th>
+                    <th>1 Rep (Warmup 1)</th>
+                    <th>1 Rep (Warmup 2)</th>
+                    <th>1 Rep (PR)</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Results will be inserted here by JavaScript -->
+            <tbody id="results-table">
+                <!-- Results will be injected here -->
             </tbody>
         </table>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
+
 
 
 

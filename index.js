@@ -1,37 +1,39 @@
-document.getElementById('calculate-btn').addEventListener('click', () => {
+function calculateWarmups() {
     const prMax = parseFloat(document.getElementById('pr-max').value);
-    
     if (isNaN(prMax) || prMax <= 0) {
-        alert('Please enter a valid PR (1 rep max).');
+        alert('Please enter a valid 1 Rep Max (PR).');
         return;
     }
 
-    const resultsTableBody = document.getElementById('results-table').getElementsByTagName('tbody')[0];
-    resultsTableBody.innerHTML = ''; // Clear previous results
+    const resultsTable = document.getElementById('results-table');
+    resultsTable.innerHTML = ''; // Clear previous results
 
-    let currentPR = prMax;
     for (let week = 1; week <= 8; week++) {
-        const warmupSet1 = Math.round((currentPR / 2) / 5) * 5;
-        const warmupSet2 = Math.round((currentPR * 0.05) / 5) * 5;
-        const warmupSet3 = Math.round((currentPR * 0.93) / 5) * 5;
-        const warmupSet4 = warmupSet3 + 10;
-        const warmupSet5 = warmupSet4 + 5;
+        const pr = prMax + (week - 1) * 5; // PR for each week, incremented by 5
 
-        // Create a new row for the table
-        const row = resultsTableBody.insertRow();
-        row.insertCell().textContent = `Week ${week}`;
-        row.insertCell().textContent = `10 reps at ${warmupSet1} lbs`;
-        row.insertCell().textContent = `6 reps at ${warmupSet2} lbs`;
-        row.insertCell().textContent = `1 rep at ${warmupSet3} lbs`;
-        row.insertCell().textContent = `1 rep at ${warmupSet4} lbs`;
-        row.insertCell().textContent = `1 rep at ${warmupSet5} lbs`;
+        // Calculations
+        const warmup1 = Math.round((pr / 2) / 5) * 5;
+        const warmup2 = Math.round((pr * 0.05) / 5) * 5;
+        const warmup3 = Math.round((pr * 0.93) / 5) * 5;
+        const warmup4 = warmup3 + 10;
+        const warmup5 = warmup4 + 5;
 
-        // Increment PR by 5 lbs for the next week
-        currentPR += 5;
+        // Insert into table
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>Week ${week}</td>
+            <td>${warmup1} lbs</td>
+            <td>${warmup2} lbs</td>
+            <td>${warmup3} lbs</td>
+            <td>${warmup4} lbs</td>
+            <td>${warmup5} lbs</td>
+        `;
+        resultsTable.appendChild(row);
     }
 
     document.getElementById('results').style.display = 'block';
-});
+}
+
 
 
 
