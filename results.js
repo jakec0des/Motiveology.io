@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const pr = parseFloat(urlParams.get('pr'));
 
+    if (isNaN(pr)) {
+        alert('Invalid PR value.');
+        return;
+    }
+
     // Function to round to the nearest 5 lbs
     function roundToNearest5(num) {
         return Math.round(num / 5) * 5;
