@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const warmup1 = roundToNearest5(0.50 * weekPR);
             const warmup2 = roundToNearest5(0.85 * weekPR);
             const warmup3 = roundToNearest5(0.93 * weekPR);
-            const warmup4 = roundToNearest5(warmup3 + 1);
+            const warmup4 = roundToNearest5(warmup3 + 10);
             const warmup5 = roundToNearest5(warmup4 + 10);
 
             results.push({
