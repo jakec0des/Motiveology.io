@@ -1,43 +1,40 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
-    let pr = parseFloat(urlParams.get('pr'));
+    const pr = parseFloat(urlParams.get('pr'));
 
-    if (isNaN(pr) || pr <= 0) {
-        document.getElementById('results').innerHTML = 'Invalid PR value.';
+    if (isNaN(pr)) {
+        document.querySelector('.results-container').innerHTML = '<p>Error: Invalid PR value.</p>';
         return;
     }
 
-    const warmupIncrement = 5; // Increment for PR each week
-    const numWeeks = 8; // Number of weeks
+    let currentPR = pr;
+    let resultsHTML = '';
 
-    let resultsHtml = '';
+    for (let week = 1; week <= 8; week++) {
+        const warmupSet1 = Math.round(0.50 * currentPR / 5) * 5;
+        const warmupSet2 = Math.round(0.85 * currentPR / 5) * 5;
+        const warmupSet3 = Math.round(0.93 * currentPR / 5) * 5;
+        const warmupSet4 = Math.round((warmupSet3 + 1) / 5) * 5;
+        const warmupSet5 = Math.round((warmupSet4 + 10) / 5) * 5;
 
-    for (let week = 1; week <= numWeeks; week++) {
-        // Calculate warm-up weights for the current week
-        const warmup1 = pr - 0.10 * pr; // Warm-up Set 1 (10 Reps)
-        const warmup2 = pr - 0.20 * pr; // Warm-up Set 2 (6 Reps)
-        const warmup3 = pr - 0.30 * pr; // Warm-up Set 3 (1 Rep)
-        const warmup4 = pr - 0.40 * pr; // Warm-up Set 4 (1 Rep)
-        const warmup5 = pr - 0.50 * pr; // Warm-up Set 5 (1 Rep)
-
-        resultsHtml += `
-            <div class="week-container">
-                <h2>Week ${week}: ${pr.toFixed(2)} lbs</h2>
-                <p>Warm-up Set 1 (10 Reps): ${warmup1.toFixed(2)} lbs</p>
-                <p>Warm-up Set 2 (6 Reps): ${warmup2.toFixed(2)} lbs</p>
-                <p>Warm-up Set 3 (1 Rep): ${warmup3.toFixed(2)} lbs</p>
-                <p>Warm-up Set 4 (1 Rep): ${warmup4.toFixed(2)} lbs</p>
-                <p>Warm-up Set 5 (1 Rep): ${warmup5.toFixed(2)} lbs</p>
-                <p>PR Attempt: ${pr.toFixed(2)} lbs</p>
+        resultsHTML += `
+            <div class="week">
+                <h2>WEEK ${week}: ${currentPR}</h2>
+                <p>Warm-up Set 1 (10 Reps): ${warmupSet1}</p>
+                <p>Warm-up Set 2 (6 Reps): ${warmupSet2}</p>
+                <p>Warm-up Set 3 (1 Rep): ${warmupSet3}</p>
+                <p>Warm-up Set 4 (1 Rep): ${warmupSet4}</p>
+                <p>Warm-up Set 5 (1 Rep): ${warmupSet5}</p>
+                <p>PR Attempt: ${currentPR}</p>
             </div>
         `;
 
-        // Increase PR by 5 lbs for the next week
-        pr += warmupIncrement;
+        currentPR += 5;
     }
 
-    document.getElementById('results').innerHTML = resultsHtml;
+    document.querySelector('.results-container').innerHTML = resultsHTML;
 });
+
 
 
 
