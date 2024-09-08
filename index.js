@@ -1,55 +1,44 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('calculator-form');
-    const resultsTable = document.getElementById('results');
-    const resultsBody = resultsTable.querySelector('tbody');
+document.getElementById('pr-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const pr = parseFloat(document.getElementById('pr').value);
+    
+    if (isNaN(pr) || pr <= 0) {
+        alert('Please enter a valid PR.');
+        return;
+    }
 
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
+    const warmup1 = Math.round((pr / 2) / 5) * 5;
+    const warmup2 = Math.round((pr * 0.05) / 5) * 5;
+    const warmup3 = Math.round((pr * 0.93) / 5) * 5;
+    const warmup4 = warmup3 + 10;
+    const warmup5 = warmup4 + 5;
 
-        const pr = parseFloat(document.getElementById('pr').value);
-        const reps = parseInt(document.getElementById('reps').value);
+    let resultsHTML = '<h2>Warmup Sets</h2>';
+    resultsHTML += '<table><thead><tr><th>Week</th><th>10 Reps</th><th>6 Reps</th><th>1 Rep Warmup 1</th><th>1 Rep Warmup 2</th><th>1 Rep PR</th></tr></thead><tbody>';
 
-        if (isNaN(pr) || isNaN(reps) || reps < 1) {
-            alert('Please enter valid numbers.');
-            return;
-        }
+    for (let week = 1; week <= 8; week++) {
+        const weekWarmup1 = warmup1;
+        const weekWarmup2 = warmup2;
+        const weekWarmup3 = warmup3 + (week - 1) * 5;
+        const weekWarmup4 = weekWarmup3 + 10;
+        const weekWarmup5 = weekWarmup4 + 5;
+        const weekPR = pr + (week - 1) * 5;
 
-        // Clear previous results
-        resultsBody.innerHTML = '';
+        resultsHTML += `<tr>
+            <td>Week ${week}</td>
+            <td>${weekWarmup1} lbs</td>
+            <td>${weekWarmup2} lbs</td>
+            <td>${weekWarmup3} lbs</td>
+            <td>${weekWarmup4} lbs</td>
+            <td>${weekWarmup5} lbs</td>
+            <td>${weekPR} lbs</td>
+        </tr>`;
+    }
 
-        // Generate warmup sets
-        const warmups = [];
-        for (let i = 1; i <= 5; i++) {
-            const warmup = ((pr * 0.2) * i).toFixed(2); // Adjust formula if needed
-            warmups.push(warmup);
-        }
-
-        // Add results to table
-        const row = document.createElement('tr');
-        const cells = [
-            `${reps} reps`,
-            ...warmups,
-            pr.toFixed(2)
-        ];
-
-        cells.forEach(cellText => {
-            const cell = document.createElement('td');
-            cell.textContent = cellText;
-            row.appendChild(cell);
-        });
-
-        resultsBody.appendChild(row);
-        resultsTable.style.display = 'table'; // Show results table
-    });
-
-    // Handle Enter key for form submission
-    form.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            form.dispatchEvent(new Event('submit'));
-        }
-    });
+    resultsHTML += '</tbody></table>';
+    document.getElementById('results').innerHTML = resultsHTML;
 });
+
 
 
 

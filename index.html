@@ -8,34 +8,16 @@
 </head>
 <body>
     <h1>Motivology PR Calculator</h1>
-    <form id="calculator-form">
+    <form id="pr-form">
         <label for="pr">Enter your PR (1 Rep Max):</label>
         <input type="number" id="pr" name="pr" required>
-
-        <label for="reps">Enter number of reps:</label>
-        <input type="number" id="reps" name="reps" required>
-
         <button type="submit" class="submit-btn">Calculate Warmups</button>
     </form>
-
-    <table id="results" style="display:none;">
-        <thead>
-            <tr>
-                <th>Reps</th>
-                <th>Warmup 1</th>
-                <th>Warmup 2</th>
-                <th>Warmup 3</th>
-                <th>Warmup 4</th>
-                <th>Warmup 5</th>
-                <th>PR</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
+    <div id="results"></div>
     <script src="index.js"></script>
 </body>
 </html>
+
 
 
 

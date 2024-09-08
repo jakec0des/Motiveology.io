@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Cyber';
+  src: url('https://assets.codepen.io/605876/Blender-Pro-Bold.otf');
+  font-display: swap;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -5,7 +11,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-family: 'Cyber', sans-serif;
-  background: linear-gradient(90deg, #00b8ff 70%, #001eff 70%), #00b8ff;
+  background: linear-gradient(90deg, #00b8ff 70%, #001eff 70%);
   color: #fff;
   margin: 0;
   padding: 0;
@@ -27,7 +33,6 @@ form {
 label {
   font-size: 18px;
   margin: 10px 0;
-  color: #fff; /* Ensure labels are visible */
 }
 
 input {
@@ -114,3 +119,4 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #e6de00;
 }
+
