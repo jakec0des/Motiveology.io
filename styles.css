@@ -23,11 +23,11 @@ body {
 }
 
 h1 {
-  color: #d600ff; /* Neon pink glow */
-  text-shadow: 0 0 10px #d600ff, 0 0 20px #d600ff, 0 0 30px #d600ff, 0 0 40px #bd00ff, 0 0 50px #bd00ff;
+  color: #d600ff; /* Neon pink */
   font-size: 2rem;
   text-align: center;
   margin-bottom: 20px;
+  text-shadow: none; /* Remove glow effect */
 }
 
 form {
