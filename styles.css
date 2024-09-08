@@ -27,6 +27,7 @@ form {
 label {
   font-size: 18px;
   margin: 10px 0;
+  color: #fff; /* Ensure labels are visible */
 }
 
 input {
@@ -112,47 +113,4 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #e6de00;
-}
-
-button.back-btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background: linear-gradient(45deg, #00ff9f, #00b8ff); /* Cyberpunk green-yellow gradient */
-  color: #000;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 12px rgba(0, 255, 159, 0.8), 0 0 20px rgba(0, 255, 159, 0.6); /* Green glow effect */
-  position: relative;
-}
-
-button.back-btn:hover {
-  background: linear-gradient(45deg, #00b8ff, #00ff9f); /* Darker green-yellow gradient on hover */
-  box-shadow: 0 0 15px rgba(0, 255, 159, 1), 0 0 25px rgba(0, 255, 159, 0.8); /* Stronger green glow on hover */
-}
-
-button.back-btn:after,
-button.back-btn:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);
-  z-index: -1;
-}
-
-button.back-btn:before {
-  background: rgba(0, 255, 159, 0.6); /* Green shadow */
-  transform: translate(4px, 4px);
-}
-
-button.back-btn:after {
-  background: linear-gradient(45deg, #00ff9f, #00b8ff); /* Green-yellow gradient */
-}
-
-button.back-btn:active {
-  background: linear-gradient(45deg, #00b8ff, #00ff9f); /* Darker green-yellow gradient on active */
 }

@@ -1,45 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('calculator-form');
+    const resultsTable = document.getElementById('results');
+    const resultsBody = resultsTable.querySelector('tbody');
+
     form.addEventListener('submit', (event) => {
         event.preventDefault();
+
         const pr = parseFloat(document.getElementById('pr').value);
-        const warmupPR = parseFloat(document.getElementById('warmup-pr').value);
+        const reps = parseInt(document.getElementById('reps').value);
 
-        // Calculate warmup sets
-        const warmup1 = Math.round((pr / 2) / 5) * 5;
-        const warmup2 = Math.round((pr * 0.05) / 5) * 5;
-        const warmup3 = Math.round((pr * 0.93) / 5) * 5;
-        const warmup4 = warmup3 + 10;
-        const warmup5 = warmup4 + 5;
-        const prFinal = pr;
-
-        // Calculate weekly increments
-        const weeks = [];
-        for (let i = 0; i < 8; i++) {
-            weeks.push({
-                week: i + 1,
-                warmup1: warmup1,
-                warmup2: warmup2,
-                warmup3: warmup3,
-                warmup4: warmup4,
-                warmup5: warmup5,
-                pr: prFinal
-            });
-
-            // Increment for next week
-            warmup1 += 5;
-            warmup2 += 5;
-            warmup3 += 5;
-            warmup4 += 5;
-            warmup5 += 5;
-            prFinal += 5;
+        if (isNaN(pr) || isNaN(reps) || reps < 1) {
+            alert('Please enter valid numbers.');
+            return;
         }
 
-        // Save results to local storage
-        localStorage.setItem('weeks', JSON.stringify(weeks));
+        // Clear previous results
+        resultsBody.innerHTML = '';
 
-        // Redirect to results page
-        window.location.href = 'results.html';
+        // Generate warmup sets
+        const warmups = [];
+        for (let i = 1; i <= 5; i++) {
+            const warmup = ((pr * 0.2) * i).toFixed(2); // Adjust formula if needed
+            warmups.push(warmup);
+        }
+
+        // Add results to table
+        const row = document.createElement('tr');
+        const cells = [
+            `${reps} reps`,
+            ...warmups,
+            pr.toFixed(2)
+        ];
+
+        cells.forEach(cellText => {
+            const cell = document.createElement('td');
+            cell.textContent = cellText;
+            row.appendChild(cell);
+        });
+
+        resultsBody.appendChild(row);
+        resultsTable.style.display = 'table'; // Show results table
+    });
+
+    // Handle Enter key for form submission
+    form.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            form.dispatchEvent(new Event('submit'));
+        }
     });
 });
 
