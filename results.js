@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const warmupSet1 = Math.round(0.50 * currentPR / 5) * 5;
         const warmupSet2 = Math.round(0.85 * currentPR / 5) * 5;
         const warmupSet3 = Math.round(0.93 * currentPR / 5) * 5;
-        const warmupSet4 = Math.round((warmupSet3 + 1) / 5) * 5;
-        const warmupSet5 = Math.round((warmupSet4 + 10) / 5) * 5;
+        const warmupSet4 = Math.round((warmupSet3 + 10) / 5) * 5;
+        const warmupSet5 = Math.round((warmupSet4 + 5) / 5) * 5;
 
         resultsHTML += `
             <div class="week">
