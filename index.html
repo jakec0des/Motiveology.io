@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivology PR Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <h1>Motivology PR Calculator</h1>
+
+    <form id="pr-form">
+        <label for="pr-max">Enter your PR (1 rep max):</label>
+        <input type="number" id="pr-max" name="pr-max" required>
+        
+        <button type="button" class="cybr-btn" id="calculate-btn">Calculate Warmups</button>
+    </form>
+
+    <div id="results" style="display: none;">
+        <h2>Warm-Up Recommendations</h2>
+        <table id="results-table">
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>10 Reps</th>
+                    <th>6 Reps</th>
+                    <th>1 Rep 1</th>
+                    <th>1 Rep 2</th>
+                    <th>1 Rep 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Results will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

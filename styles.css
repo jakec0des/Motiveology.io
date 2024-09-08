@@ -1,0 +1,109 @@
+@font-face {
+    font-family: Cyber;
+    src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+    font-display: swap;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Cyber', sans-serif;
+    background: linear-gradient(90deg, #00b8ff 0%, #001eff 100%); /* Gradient background */
+    color: #fff;
+  }
+  
+  h1 {
+    color: #d600ff; /* Neon pink glow */
+    text-shadow: 0 0 10px #d600ff, 0 0 20px #d600ff, 0 0 30px #d600ff, 0 0 40px #bd00ff, 0 0 50px #bd00ff;
+  }
+  
+  label {
+    color: #00ff9f; /* Neon green */
+  }
+  
+  input[type="number"] {
+    border: 2px solid #00b8ff; /* Neon blue border */
+    background: #001eff; /* Dark blue background */
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px 0;
+  }
+  
+  button.cybr-btn {
+    background: linear-gradient(45deg, #d600ff, #bd00ff); /* Neon purple gradient */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px #d600ff, 0 0 20px #bd00ff; /* Neon glow */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  button.cybr-btn:hover {
+    background: linear-gradient(45deg, #bd00ff, #d600ff); /* Swap colors on hover */
+    box-shadow: 0 0 15px #d600ff, 0 0 25px #bd00ff; /* Stronger glow */
+  }
+  
+  button.cybr-btn:active {
+    background: linear-gradient(45deg, #bd00ff, #d600ff); /* Darker gradient on active */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #00b8ff; /* Neon blue borders */
+    padding: 8px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #001eff; /* Dark blue header background */
+    color: #00ff9f; /* Neon green text */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #001eff; /* Dark blue rows */
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #00b8ff; /* Neon blue rows */
+  }
+  
+  tr:hover {
+    background-color: #00ff9f; /* Neon green hover effect */
+    color: #001eff; /* Dark blue text on hover */
+  }
+  
+  #results {
+    display: none;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
