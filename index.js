@@ -1,7 +1,7 @@
 document.getElementById('pr-form').addEventListener('submit', function(event) {
     event.preventDefault();
     const pr = parseFloat(document.getElementById('pr').value);
-    
+
     if (isNaN(pr) || pr <= 0) {
         alert('Please enter a valid PR.');
         return;
@@ -14,7 +14,7 @@ document.getElementById('pr-form').addEventListener('submit', function(event) {
     const warmup5 = warmup4 + 5;
 
     let resultsHTML = '<h2>Warmup Sets</h2>';
-    resultsHTML += '<table><thead><tr><th>Week</th><th>10 Reps</th><th>6 Reps</th><th>1 Rep Warmup 1</th><th>1 Rep Warmup 2</th><th>1 Rep PR</th></tr></thead><tbody>';
+    resultsHTML += '<table><thead><tr><th>Week</th><th>Warmup 1</th><th>Warmup 2</th><th>Warmup 3</th><th>Warmup 4</th><th>Warmup 5</th><th>PR</th></tr></thead><tbody>';
 
     for (let week = 1; week <= 8; week++) {
         const weekWarmup1 = warmup1;
@@ -38,6 +38,8 @@ document.getElementById('pr-form').addEventListener('submit', function(event) {
     resultsHTML += '</tbody></table>';
     document.getElementById('results').innerHTML = resultsHTML;
 });
+
+
 
 
 

@@ -51,18 +51,18 @@ button.submit-btn {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background: linear-gradient(45deg, #d600ff, #00ff9f); /* Cyberpunk yellow */
+  background: linear-gradient(45deg, #d600ff, #00ff9f); /* Cyberpunk gradient */
   color: #000;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 12px rgba(214, 0, 255, 0.8), 0 0 20px rgba(214, 0, 255, 0.6); /* Yellow glow effect */
+  box-shadow: 0 0 12px rgba(214, 0, 255, 0.8), 0 0 20px rgba(214, 0, 255, 0.6); /* Cyberpunk glow effect */
   position: relative;
 }
 
 button.submit-btn:hover {
-  background: linear-gradient(45deg, #00ff9f, #d600ff); /* Darker cyberpunk yellow on hover */
-  box-shadow: 0 0 15px rgba(214, 0, 255, 1), 0 0 25px rgba(214, 0, 255, 0.8); /* Stronger yellow glow on hover */
+  background: linear-gradient(45deg, #00ff9f, #d600ff); /* Darker gradient on hover */
+  box-shadow: 0 0 15px rgba(214, 0, 255, 1), 0 0 25px rgba(214, 0, 255, 0.8); /* Stronger glow on hover */
 }
 
 button.submit-btn:after,
@@ -78,16 +78,16 @@ button.submit-btn:before {
 }
 
 button.submit-btn:before {
-  background: rgba(214, 0, 255, 0.6); /* Yellow shadow */
+  background: rgba(214, 0, 255, 0.6); /* Shadow effect */
   transform: translate(4px, 4px);
 }
 
 button.submit-btn:after {
-  background: linear-gradient(45deg, #d600ff, #00ff9f); /* Yellow gradient */
+  background: linear-gradient(45deg, #d600ff, #00ff9f); /* Gradient effect */
 }
 
 button.submit-btn:active {
-  background: linear-gradient(45deg, #00ff9f, #d600ff); /* Darker yellow gradient on active */
+  background: linear-gradient(45deg, #00ff9f, #d600ff); /* Darker gradient on active */
 }
 
 table {
@@ -119,4 +119,5 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #e6de00;
 }
+
 
