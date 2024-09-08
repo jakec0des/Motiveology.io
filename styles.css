@@ -66,6 +66,8 @@ button.cybr-btn {
   box-shadow: 0 0 10px #d600ff, 0 0 20px #bd00ff; /* Neon glow */
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: block; /* Ensure block display for centering */
+  margin: 0 auto; /* Center button horizontally */
 }
 
 button.cybr-btn:hover {
@@ -144,8 +146,6 @@ table {
   }
 }
 
-  
-  
   
   
   
