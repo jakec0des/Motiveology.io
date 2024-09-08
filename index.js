@@ -6,10 +6,11 @@ function calculateWarmups() {
         alert('Please enter a valid 1 Rep Max.');
         return;
     }
-    
+
     let tableRows = '';
     
     for (let week = 1; week <= 8; week++) {
+        // Calculate warmups
         const warmup1 = Math.round((prMax / 2) / 5) * 5;
         const warmup2 = Math.round((prMax * 0.05) / 5) * 5;
         const warmup3 = Math.round((prMax * 0.93) / 5) * 5;
@@ -17,6 +18,7 @@ function calculateWarmups() {
         const warmup5 = warmup4 + 5;
         const pr = prMax + (week - 1) * 5;
 
+        // Add rows to the table
         tableRows += `
             <tr>
                 <td>Week ${week}</td>
@@ -32,6 +34,7 @@ function calculateWarmups() {
 
     resultsTable.innerHTML = tableRows;
 }
+
 
 
 
