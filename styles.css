@@ -1,20 +1,20 @@
-/* General Styles */
 body {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(90deg, #001eff 30%, #bd00ff 70%);
+  font-family: 'Cyber', sans-serif;
+  background: linear-gradient(90deg, #00b8ff 70%, #001eff 70%), #00b8ff;
   color: #fff;
   margin: 0;
-  font-family: 'Cyber', sans-serif;
+  padding: 0;
 }
 
 h1 {
-  color: #ffeb00; /* Yellow color for title */
-  text-shadow: 0 0 10px #ffeb00, 0 0 20px #ffeb00, 0 0 30px #ffeb00, 0 0 40px #ffeb00, 0 0 50px #ffeb00;
-  margin-bottom: 20px;
+  color: #ffff00; /* Yellow text */
+  text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00, 0 0 40px #00b8ff, 0 0 50px #00b8ff;
+  text-align: center;
 }
 
 table {
@@ -30,33 +30,63 @@ th, td {
 }
 
 th {
-  background-color: #002bff; /* Dark blue for header */
+  background-color: #001eff;
+  color: #00ff9f; /* Green text for headers */
   font-weight: bold;
 }
 
+td {
+  color: #00ff9f; /* Green text for table cells */
+}
+
 tr:nth-child(even) {
-  background-color: #0d0d0d; /* Darker background for even rows */
+  background-color: #f9f9f9;
 }
 
 tr:hover {
-  background-color: #1a1a1a; /* Slightly lighter background on hover */
+  background-color: #e6de00;
 }
 
 button.back-btn {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background: linear-gradient(45deg, #d600ff, #00b8ff); /* Gradient from purple to blue */
-  color: #fff;
+  background: linear-gradient(45deg, #00ff9f, #00b8ff); /* Green gradient for back button */
+  color: #000;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 12px rgba(214, 0, 255, 0.8), 0 0 20px rgba(0, 184, 255, 0.6); /* Purple and blue glow effect */
+  box-shadow: 0 0 12px rgba(0, 255, 159, 0.8), 0 0 20px rgba(0, 255, 159, 0.6); /* Green glow effect */
   position: relative;
 }
 
 button.back-btn:hover {
-  background: linear-gradient(45deg, #00b8ff, #d600ff); /* Inverse gradient on hover */
-  box-shadow: 0 0 15px rgba(214, 0, 255, 1), 0 0 25px rgba(0, 184, 255, 0.8); /* Stronger glow on hover */
+  background: linear-gradient(45deg, #00b8ff, #00ff9f); /* Darker green gradient on hover */
+  box-shadow: 0 0 15px rgba(0, 255, 159, 1), 0 0 25px rgba(0, 255, 159, 0.8); /* Stronger green glow on hover */
+}
+
+button.back-btn:after,
+button.back-btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);
+  z-index: -1;
+}
+
+button.back-btn:before {
+  background: rgba(0, 255, 159, 0.6); /* Green shadow */
+  transform: translate(4px, 4px);
+}
+
+button.back-btn:after {
+  background: linear-gradient(45deg, #00ff9f, #00b8ff); /* Green gradient */
+}
+
+button.back-btn:active {
+  background: linear-gradient(45deg, #00b8ff, #00ff9f); /* Darker green gradient on active */
 }
 
