@@ -51,18 +51,18 @@ button.submit-btn {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background: linear-gradient(45deg, #d600ff, #00ff9f); /* Cyberpunk gradient */
+  background: linear-gradient(45deg, #d600ff, #00ff9f); /* Cyberpunk yellow */
   color: #000;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 12px rgba(214, 0, 255, 0.8), 0 0 20px rgba(214, 0, 255, 0.6); /* Cyberpunk glow effect */
+  box-shadow: 0 0 12px rgba(214, 0, 255, 0.8), 0 0 20px rgba(214, 0, 255, 0.6); /* Yellow glow effect */
   position: relative;
 }
 
 button.submit-btn:hover {
-  background: linear-gradient(45deg, #00ff9f, #d600ff); /* Darker gradient on hover */
-  box-shadow: 0 0 15px rgba(214, 0, 255, 1), 0 0 25px rgba(214, 0, 255, 0.8); /* Stronger glow on hover */
+  background: linear-gradient(45deg, #00ff9f, #d600ff); /* Darker cyberpunk yellow on hover */
+  box-shadow: 0 0 15px rgba(214, 0, 255, 1), 0 0 25px rgba(214, 0, 255, 0.8); /* Stronger yellow glow on hover */
 }
 
 button.submit-btn:after,
@@ -78,16 +78,16 @@ button.submit-btn:before {
 }
 
 button.submit-btn:before {
-  background: rgba(214, 0, 255, 0.6); /* Shadow effect */
+  background: rgba(214, 0, 255, 0.6); /* Yellow shadow */
   transform: translate(4px, 4px);
 }
 
 button.submit-btn:after {
-  background: linear-gradient(45deg, #d600ff, #00ff9f); /* Gradient effect */
+  background: linear-gradient(45deg, #d600ff, #00ff9f); /* Yellow gradient */
 }
 
 button.submit-btn:active {
-  background: linear-gradient(45deg, #00ff9f, #d600ff); /* Darker gradient on active */
+  background: linear-gradient(45deg, #00ff9f, #d600ff); /* Darker yellow gradient on active */
 }
 
 table {
@@ -120,4 +120,46 @@ tr:hover {
   background-color: #e6de00;
 }
 
+button.back-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(45deg, #00ff9f, #00b8ff); /* Cyberpunk yellow */
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 255, 159, 0.8), 0 0 20px rgba(0, 255, 159, 0.6); /* Green glow effect */
+  position: relative;
+}
+
+button.back-btn:hover {
+  background: linear-gradient(45deg, #00b8ff, #00ff9f); /* Darker cyberpunk yellow on hover */
+  box-shadow: 0 0 15px rgba(0, 255, 159, 1), 0 0 25px rgba(0, 255, 159, 0.8); /* Stronger green glow on hover */
+}
+
+button.back-btn:after,
+button.back-btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);
+  z-index: -1;
+}
+
+button.back-btn:before {
+  background: rgba(0, 255, 159, 0.6); /* Green shadow */
+  transform: translate(4px, 4px);
+}
+
+button.back-btn:after {
+  background: linear-gradient(45deg, #00ff9f, #00b8ff); /* Green gradient */
+}
+
+button.back-btn:active {
+  background: linear-gradient(45deg, #00b8ff, #00ff9f); /* Darker green gradient on active */
+}
 
