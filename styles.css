@@ -11,41 +11,41 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-family: 'Cyber', sans-serif;
-  background: url('https://jakec0des/Motiveology.io/photoback.avif') no-repeat center center fixed;
+  background: url('https://jakec0des/Motiveology.io/nezih-kosak-DySFm3MAzRs-unsplash.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
   margin: 0;
   padding: 0;
 }
 
-
 h1 {
   color: #ffff00; /* Yellow text */
   text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00, 0 0 30px #ffff00, 0 0 40px #00b8ff, 0 0 50px #00b8ff;
   text-align: center;
-  margin: 0 20px;
 }
 
-.results-container {
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
-  width: 100%;
-  text-align: center;
 }
 
-.week {
-  margin-bottom: 20px;
+label {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+input {
   padding: 10px;
-  border: 2px solid #ddd;
+  border: 2px solid #00b8ff;
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.week h2 {
-  color: #ffff00; /* Yellow text for week headers */
-}
-
-.week p {
-  color: #00ff9f; /* Green text for warm-up details */
+  background: #001eff;
+  color: #fff;
+  font-size: 16px;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 button.submit-btn {
@@ -91,25 +91,26 @@ button.submit-btn:active {
   background: linear-gradient(45deg, #00ff9f, #d600ff); /* Darker yellow gradient on active */
 }
 
-button.back-btn {
-  padding: 10px 20px;
-  border: none;
+.results-container {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.week {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid #ddd;
   border-radius: 5px;
-  background: linear-gradient(45deg, #d600ff, #00ff9f); /* Cyberpunk colors */
-  color: #000;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 12px rgba(214, 0, 255, 0.8), 0 0 20px rgba(214, 0, 255, 0.6); /* Yellow glow effect */
-  position: relative;
+  background: rgba(0, 0, 0, 0.2);
 }
 
-button.back-btn:hover {
-  background: linear-gradient(45deg, #00ff9f, #d600ff); /* Darker cyberpunk colors on hover */
-  box-shadow: 0 0 15px rgba(214, 0, 255, 1), 0 0 25px rgba(214, 0, 255, 0.8); /* Stronger yellow glow on hover */
+.week h2 {
+  color: #ffff00; /* Yellow text for week headers */
 }
 
-
-
+.week p {
+  color: #00ff9f; /* Green text for warm-up details */
+}
 
 
