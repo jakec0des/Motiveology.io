@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motivology</title>
+    <title>Motivology PR Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Motivology PR Calculator</h1>
-    <form id="pr-form">
-        <label for="pr">Enter your PR (1 Rep Max):</label>
-        <input type="number" id="pr" name="pr" required>
+    <form id="pr-form" action="results.html" method="get">
+        <label for="pr-input">Enter your PR</label>
+        <input type="number" id="pr-input" name="pr" placeholder="Enter your PR" required>
         <button type="submit" class="submit-btn">Calculate Warm-ups</button>
     </form>
-    <script src="index.js"></script>
 </body>
 </html>
+
 
 
 
